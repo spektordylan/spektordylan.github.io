@@ -7,97 +7,106 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="/images/favicon.png">
-        <link rel="stylesheet" href="./tailwind/output.css">
+        <link rel="stylesheet" href="./styles/output.css">
         <title>Dylan Spektor</title>
+        <script>
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+                moonIcon.classList.toggle("display-none");
+                sunIcon.classList.toggle("display-none");
+            }
+        </script>
     </head>
     <body>
-        <div class="bg-emerald-100 dark:bg-teal-900 h-screen flex flex-col font-medium text-black dark:text-white px-4 overflow-auto">
-            <!--navbar-->
-            <nav>
-                <div class="max-w-screen-md mx-auto px-4 text-lg">
-                    <div class="flex items-center space-x-6 justify-between">
-                        <div>
-                            <a href="/index.html" class="py-4 px-5">
-                            <img src="/images/favicon.png" alt="spektordylan" width="30" height="30" class="mr-2 hover:border-2 border-black dark:border-white animate-wiggle hover:animate-none">
-                            </a>
+        <div class="bg-white transition duration-300 dark:bg-black h-screen flex flex-col font-medium text-black dark:text-white px-4 overflow-auto">
+            <div class="mb-auto">
+                <nav>
+                    <div class="max-w-screen-md mx-auto px-4 text-lg">
+                        <div class="flex items-center space-x-6 justify-between">
+                            <div>
+                                <a href="/index.html" class="py-4 px-5">
+                                <img src="/images/favicon.png" alt="spektordylan" width="30" height="30" class="mr-2 hover:border-2 border-black dark:border-white animate-wiggle hover:animate-none">
+                                </a>
+                            </div>
+                            <div>
+                                <a href="/about.html" class="py-4 px-4 text-sm hover:bg-emerald-100 dark:hover:bg-neutral-800 rounded-full">About</a>
+                            
+                            </div>
+                            <div>
+                                <a href="/skills.html" class="py-4 px-4 text-sm hover:bg-emerald-100 dark:hover:bg-neutral-800 rounded-full">Skills</a>
+                            </div>
+                            <div>
+                                <a href="/contact.html" class="py-4 px-4 text-sm hover:bg-emerald-100 dark:hover:bg-neutral-800 rounded-full">Contact</a>
+                            </div>
+                            <div>
+                                <img class="moon cursor-pointer" src="./images/moon-icon.svg" alt=""/>
+                                <img class="sun cursor-pointer" src="./images/sun-icon.svg" alt=""/>
+                            </div>
                         </div>
-                        <div>
-                            <a href="/about.html" class="py-4 px-4 text-sm hover:bg-emerald-200 dark:hover:bg-emerald-800 rounded-full">About</a>
-                        
-                        </div>
-                        <div>
-                            <a href="/skills.html" class="py-4 px-4 text-sm hover:bg-emerald-200 dark:hover:bg-emerald-800 rounded-full">Skills</a>
-                        </div>
-                        <div>
-                            <a href="/contact.html" class="py-4 px-4 text-sm hover:bg-emerald-200 dark:hover:bg-emerald-800 rounded-full">Contact</a>
-                        </div>
-                        <div>
-                            <img class="moon cursor-pointer" src="./images/moon-icon.svg" alt=""/>
-                            <img class="sun cursor-pointer" src="./images/sun-icon.svg" alt=""/>
-                        </div>
+                    </div>
+                </nav>
+                <!--main content-->
+                <div class="max-w-3xl mx-auto flex flex-col items-center justify-center pb-4 text-center px-4">
+                    <div class="text-5xl pb-5">
+                        Skills
+                    </div>
+                    <div class="text-xl pb-4">
+                    I have only been programming for a couple of months, so I am just at the beginning of my journey to becoming a software engineer. 
+                    </div>
+                    <div class="text-xl pb-6">
+                        Below is a list of technologies that I have used or covered in my learning so far:
                     </div>
                 </div>
-            </nav>
-            <!--main content-->
-            <div class="max-w-3xl mx-auto flex flex-col items-center justify-center pb-4 text-center px-4">
-                <div class="text-5xl pb-5">
-                    Skills
+                    <!--skill list-->
+                <div class="w-full mx-auto">
+                    <div class="flex flex-wrap flex-row justify-center pb-5 px-6">
+                        <div class="transition ease-in-out hover:scale-110 border bg-gray-100 m-2 rounded-2xl px-2 py-1.5 border-gray-400 tooltip dark:bg-gray-800 dark:bg-opacity-30">
+                            <span class="tooltiptext">HTML</span>
+                            <svg width="150" height="150" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 3L5.77778 20.0899L12 22L18.2222 20.0899L20 3H4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 7H7.5L8 11.5H16L15.5 17L12 18L8.5 17L8.25 14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="transition ease-in-out border hover:scale-110 bg-gray-100 m-2 rounded-2xl px-2 py-1.5 border-gray-400 tooltip dark:bg-gray-800 dark:bg-opacity-30">
+                            <span class="tooltiptext">CSS</span>
+                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="150px" height="150px" fill-rule="evenodd"><path fill-rule="evenodd" d="M 39 40 L 25 44 L 11 40 L 8 6 L 42 6 C 41 17.332031 40 28.667969 39 40 Z M 39.816406 8 L 10.183594 8 L 12.871094 38.453125 L 25 41.921875 L 37.128906 38.453125 Z M 16.800781 28 L 20.800781 28 L 20.898438 30.5 L 25 31.898438 L 29.101563 30.5 L 29.398438 26 L 20.601563 26 L 20.398438 22 L 29.601563 22 L 29.898438 18 L 16.101563 18 L 15.800781 14 L 34.101563 14 L 33.601563 22 L 32.898438 33.5 L 25 36.101563 L 17.101563 33.5 Z"/></svg>
+                        </div>
+                        <div class="transition ease-in-out border hover:scale-110 bg-gray-100 m-2 rounded-2xl px-2 py-1.5 border-gray-400 tooltip dark:bg-gray-800 dark:bg-opacity-30">
+                            <span class="tooltiptext">TailwindCSS</span>
+                            <svg width="150" height="150" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" stroke="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="transition ease-in-out border hover:scale-110 bg-gray-100 m-2 rounded-2xl px-2 py-1.5 border-gray-400 tooltip dark:bg-gray-800 dark:bg-opacity-30">
+                            <span class="tooltiptext">VS Code</span>
+                            <?xml version="1.0"?><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="150px" height="150px">    <path d="M27.324,4.804l-4.75-1.625c-0.315-0.108-0.667-0.051-0.932,0.152l-10.708,8.21L5.517,8.27 c-0.278-0.169-0.62-0.192-0.918-0.061l-2,0.875C2.235,9.243,2,9.603,2,10v10c0,0.397,0.235,0.757,0.599,0.916l2,0.875 c0.297,0.131,0.639,0.107,0.918-0.061l5.416-3.271l10.708,8.21c0.177,0.136,0.392,0.206,0.608,0.206 c0.109,0,0.218-0.018,0.324-0.054l4.75-1.625C27.728,25.058,28,24.678,28,24.25V5.75C28,5.322,27.728,4.942,27.324,4.804z M6,16.766 v-3.532L8.923,15L6,16.766z M22,19.717L15.038,15L22,10.283V19.717z"/></svg>
+                        </div>
+                        <div class="transition ease-in-out border hover:scale-110 bg-gray-100 m-2 rounded-2xl px-2 py-1.5 border-gray-400 tooltip dark:bg-gray-800 dark:bg-opacity-30">
+                            <span class="tooltiptext">Python</span>
+                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="150px" height="150px"><path d="M 24 3 C 20.271429 3 18.240267 3.9470561 16.792969 4.5742188 L 16.791016 4.5742188 C 15.488673 5.1421213 14.704771 6.3187748 14.365234 7.4296875 C 14.025697 8.5406002 14 9.6506515 14 10.640625 L 14 14 L 10.640625 14 C 9.6506515 14 8.5406002 14.0257 7.4296875 14.365234 C 6.3187748 14.704771 5.1421212 15.488626 4.5742188 16.791016 L 4.5742188 16.792969 C 3.947056 18.24022 3 20.271429 3 24 C 3 27.728571 3.9470561 29.759733 4.5742188 31.207031 L 4.5742188 31.208984 C 5.1421212 32.511374 6.3187748 33.295229 7.4296875 33.634766 C 8.5406002 33.974256 9.6506515 34 10.640625 34 L 14 34 L 14 37.359375 C 14 38.349349 14.0257 39.459401 14.365234 40.570312 C 14.704771 41.681225 15.488626 42.857879 16.791016 43.425781 L 16.792969 43.425781 C 18.24022 44.052944 20.271429 45 24 45 C 27.728571 45 29.759733 44.052944 31.207031 43.425781 L 31.208984 43.425781 C 32.511374 42.857879 33.295229 41.681225 33.634766 40.570312 C 33.974256 39.459401 34 38.349349 34 37.359375 L 34 34 L 37.359375 34 C 38.349349 34 39.459401 33.9743 40.570312 33.634766 C 41.681225 33.295229 42.857879 32.511374 43.425781 31.208984 L 43.425781 31.207031 C 44.052944 29.75978 45 27.728571 45 24 C 45 20.271429 44.052944 18.240267 43.425781 16.792969 L 43.425781 16.791016 C 42.857879 15.488673 41.681225 14.704771 40.570312 14.365234 C 39.459401 14.025697 38.349349 14 37.359375 14 L 34 14 L 34 10.640625 C 34 9.6506515 33.974303 8.5406002 33.634766 7.4296875 C 33.295229 6.3187748 32.511374 5.1421213 31.208984 4.5742188 L 31.207031 4.5742188 C 29.75978 3.9470561 27.728571 3 24 3 z M 24 6 C 27.268623 6 28.459017 6.6519922 30.009766 7.3242188 C 30.427376 7.5063161 30.590162 7.7325533 30.765625 8.3066406 C 30.941088 8.8807279 31 9.7405985 31 10.640625 L 31 15.253906 A 1.50015 1.50015 0 0 0 31 15.740234 L 31 19 C 31 20.950062 29.450062 22.5 27.5 22.5 L 20.5 22.5 C 16.928062 22.5 14 25.428062 14 29 L 14 31 L 10.640625 31 C 9.7405985 31 8.8807279 30.941088 8.3066406 30.765625 C 7.7325533 30.590162 7.5063162 30.427376 7.3242188 30.009766 C 6.6519921 28.459017 6 27.268623 6 24 C 6 20.731377 6.6519921 19.540983 7.3242188 17.990234 C 7.5063161 17.572624 7.7325533 17.409838 8.3066406 17.234375 C 8.8807279 17.058912 9.7405985 17 10.640625 17 L 23.5 17 A 1.50015 1.50015 0 1 0 23.5 14 L 17 14 L 17 10.640625 C 17 9.7405985 17.058912 8.8807279 17.234375 8.3066406 C 17.409838 7.7325533 17.572624 7.5063162 17.990234 7.3242188 C 19.540983 6.6519921 20.731377 6 24 6 z M 20.5 9 A 1.5 1.5 0 0 0 20.5 12 A 1.5 1.5 0 0 0 20.5 9 z M 34 17 L 37.359375 17 C 38.259401 17 39.119272 17.05891 39.693359 17.234375 C 40.267447 17.409838 40.493684 17.572624 40.675781 17.990234 C 41.348008 19.540983 42 20.731377 42 24 C 42 27.268623 41.348008 28.459017 40.675781 30.009766 C 40.493684 30.427376 40.267447 30.590162 39.693359 30.765625 C 39.119272 30.941088 38.259401 31 37.359375 31 L 24.5 31 A 1.50015 1.50015 0 1 0 24.5 34 L 31 34 L 31 37.359375 C 31 38.259401 30.94109 39.119272 30.765625 39.693359 C 30.590162 40.267447 30.427376 40.493684 30.009766 40.675781 C 28.459017 41.348008 27.268623 42 24 42 C 20.731377 42 19.540983 41.348008 17.990234 40.675781 C 17.572624 40.493684 17.409838 40.267447 17.234375 39.693359 C 17.058912 39.119272 17 38.259401 17 37.359375 L 17 29 C 17 27.049938 18.549938 25.5 20.5 25.5 L 27.5 25.5 C 31.071938 25.5 34 22.571938 34 19 L 34 17 z M 27.5 36 A 1.5 1.5 0 0 0 27.5 39 A 1.5 1.5 0 0 0 27.5 36 z"/></svg>
+                        </div>
+                    
                 </div>
-                <div class="text-xl pb-4">
-                   Given that I am fairly new on my journey in full-stack development, my skills are, well, limited. 
+                <div class="max-w-3xl mx-auto text-center px-4 pt-5">
+                    <div class="text-xl">
+                    I have found the <span class="hover:underline text-blue-500 dark:text-blue-400"><a href="https://roadmap.sh/" target="_blank">developer roadmap</a></span> created by <span class="hover:underline text-blue-500 dark:text-blue-400"><a href="https://github.com/kamranahmedse" target="_blank">Kamran Ahmed</a></span> to be a very useful resource in guiding what technologies I should learn next. In the near future, I hope to learn how to use JavaScript and libraries like React to create fluid and seamless front-end interfaces. Of course, I also hope to soon delve deeper into back-end technologies as well.
+                    </div>   
                 </div>
-                <div class="text-xl pb-4">
-                    Below is a list of technologies that I have used or covered in my learning:
-                </div>
-            </div>
-                <!--skill list-->
-            <div class="w-full mx-auto">
-                <div class="flex flex-wrap flex-row justify-center mb-5 px-6">
-                    <div class="border border-current m-2 rounded-3xl px-2 py-1.5 hover:border-gray-400 tooltip">
-                        <span class="tooltiptext">HTML</span>
-                        <svg width="150" height="150" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 3L5.77778 20.0899L12 22L18.2222 20.0899L20 3H4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M17 7H7.5L8 11.5H16L15.5 17L12 18L8.5 17L8.25 14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="border border-current m-2 rounded-3xl px-2 py-1.5 hover:border-gray-400 tooltip">
-                        <span class="tooltiptext">CSS</span>
-                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="150px" height="150px" fill-rule="evenodd"><path fill-rule="evenodd" d="M 39 40 L 25 44 L 11 40 L 8 6 L 42 6 C 41 17.332031 40 28.667969 39 40 Z M 39.816406 8 L 10.183594 8 L 12.871094 38.453125 L 25 41.921875 L 37.128906 38.453125 Z M 16.800781 28 L 20.800781 28 L 20.898438 30.5 L 25 31.898438 L 29.101563 30.5 L 29.398438 26 L 20.601563 26 L 20.398438 22 L 29.601563 22 L 29.898438 18 L 16.101563 18 L 15.800781 14 L 34.101563 14 L 33.601563 22 L 32.898438 33.5 L 25 36.101563 L 17.101563 33.5 Z"/></svg>
-                    </div>
-                    <div class="border border-current m-2 rounded-3xl px-2 py-1.5 hover:border-gray-400 tooltip">
-                        <span class="tooltiptext">TailwindCSS</span>
-                        <svg width="150" height="150" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" stroke="currentColor"/>
-                        </svg>
-                    </div>
-                    <div class="border border-current m-2 rounded-3xl px-2 py-1.5 hover:border-gray-400 tooltip">
-                        <span class="tooltiptext">VS Code</span>
-                        <?xml version="1.0"?><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="150px" height="150px">    <path d="M27.324,4.804l-4.75-1.625c-0.315-0.108-0.667-0.051-0.932,0.152l-10.708,8.21L5.517,8.27 c-0.278-0.169-0.62-0.192-0.918-0.061l-2,0.875C2.235,9.243,2,9.603,2,10v10c0,0.397,0.235,0.757,0.599,0.916l2,0.875 c0.297,0.131,0.639,0.107,0.918-0.061l5.416-3.271l10.708,8.21c0.177,0.136,0.392,0.206,0.608,0.206 c0.109,0,0.218-0.018,0.324-0.054l4.75-1.625C27.728,25.058,28,24.678,28,24.25V5.75C28,5.322,27.728,4.942,27.324,4.804z M6,16.766 v-3.532L8.923,15L6,16.766z M22,19.717L15.038,15L22,10.283V19.717z"/></svg>
-                    </div>
-                    <div class="border border-current m-2 rounded-3xl px-2 py-1.5 hover:border-gray-400 tooltip">
-                        <span class="tooltiptext">HTML</span>
-                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="150px" height="150px"><path d="M 24 3 C 20.271429 3 18.240267 3.9470561 16.792969 4.5742188 L 16.791016 4.5742188 C 15.488673 5.1421213 14.704771 6.3187748 14.365234 7.4296875 C 14.025697 8.5406002 14 9.6506515 14 10.640625 L 14 14 L 10.640625 14 C 9.6506515 14 8.5406002 14.0257 7.4296875 14.365234 C 6.3187748 14.704771 5.1421212 15.488626 4.5742188 16.791016 L 4.5742188 16.792969 C 3.947056 18.24022 3 20.271429 3 24 C 3 27.728571 3.9470561 29.759733 4.5742188 31.207031 L 4.5742188 31.208984 C 5.1421212 32.511374 6.3187748 33.295229 7.4296875 33.634766 C 8.5406002 33.974256 9.6506515 34 10.640625 34 L 14 34 L 14 37.359375 C 14 38.349349 14.0257 39.459401 14.365234 40.570312 C 14.704771 41.681225 15.488626 42.857879 16.791016 43.425781 L 16.792969 43.425781 C 18.24022 44.052944 20.271429 45 24 45 C 27.728571 45 29.759733 44.052944 31.207031 43.425781 L 31.208984 43.425781 C 32.511374 42.857879 33.295229 41.681225 33.634766 40.570312 C 33.974256 39.459401 34 38.349349 34 37.359375 L 34 34 L 37.359375 34 C 38.349349 34 39.459401 33.9743 40.570312 33.634766 C 41.681225 33.295229 42.857879 32.511374 43.425781 31.208984 L 43.425781 31.207031 C 44.052944 29.75978 45 27.728571 45 24 C 45 20.271429 44.052944 18.240267 43.425781 16.792969 L 43.425781 16.791016 C 42.857879 15.488673 41.681225 14.704771 40.570312 14.365234 C 39.459401 14.025697 38.349349 14 37.359375 14 L 34 14 L 34 10.640625 C 34 9.6506515 33.974303 8.5406002 33.634766 7.4296875 C 33.295229 6.3187748 32.511374 5.1421213 31.208984 4.5742188 L 31.207031 4.5742188 C 29.75978 3.9470561 27.728571 3 24 3 z M 24 6 C 27.268623 6 28.459017 6.6519922 30.009766 7.3242188 C 30.427376 7.5063161 30.590162 7.7325533 30.765625 8.3066406 C 30.941088 8.8807279 31 9.7405985 31 10.640625 L 31 15.253906 A 1.50015 1.50015 0 0 0 31 15.740234 L 31 19 C 31 20.950062 29.450062 22.5 27.5 22.5 L 20.5 22.5 C 16.928062 22.5 14 25.428062 14 29 L 14 31 L 10.640625 31 C 9.7405985 31 8.8807279 30.941088 8.3066406 30.765625 C 7.7325533 30.590162 7.5063162 30.427376 7.3242188 30.009766 C 6.6519921 28.459017 6 27.268623 6 24 C 6 20.731377 6.6519921 19.540983 7.3242188 17.990234 C 7.5063161 17.572624 7.7325533 17.409838 8.3066406 17.234375 C 8.8807279 17.058912 9.7405985 17 10.640625 17 L 23.5 17 A 1.50015 1.50015 0 1 0 23.5 14 L 17 14 L 17 10.640625 C 17 9.7405985 17.058912 8.8807279 17.234375 8.3066406 C 17.409838 7.7325533 17.572624 7.5063162 17.990234 7.3242188 C 19.540983 6.6519921 20.731377 6 24 6 z M 20.5 9 A 1.5 1.5 0 0 0 20.5 12 A 1.5 1.5 0 0 0 20.5 9 z M 34 17 L 37.359375 17 C 38.259401 17 39.119272 17.05891 39.693359 17.234375 C 40.267447 17.409838 40.493684 17.572624 40.675781 17.990234 C 41.348008 19.540983 42 20.731377 42 24 C 42 27.268623 41.348008 28.459017 40.675781 30.009766 C 40.493684 30.427376 40.267447 30.590162 39.693359 30.765625 C 39.119272 30.941088 38.259401 31 37.359375 31 L 24.5 31 A 1.50015 1.50015 0 1 0 24.5 34 L 31 34 L 31 37.359375 C 31 38.259401 30.94109 39.119272 30.765625 39.693359 C 30.590162 40.267447 30.427376 40.493684 30.009766 40.675781 C 28.459017 41.348008 27.268623 42 24 42 C 20.731377 42 19.540983 41.348008 17.990234 40.675781 C 17.572624 40.493684 17.409838 40.267447 17.234375 39.693359 C 17.058912 39.119272 17 38.259401 17 37.359375 L 17 29 C 17 27.049938 18.549938 25.5 20.5 25.5 L 27.5 25.5 C 31.071938 25.5 34 22.571938 34 19 L 34 17 z M 27.5 36 A 1.5 1.5 0 0 0 27.5 39 A 1.5 1.5 0 0 0 27.5 36 z"/></svg>
-                    </div>
-            </div>
-            <div class="max-w-3xl mx-auto text-center px-4 sm:mb-auto md:mb-44">
-                <div class="text-xl">
-                   I have found the <span class="hover:underline text-blue-400"><a href="https://roadmap.sh/" target="_blank">developer roadmap</a></span> created by <span class="hover:underline text-blue-400"><a href="https://github.com/kamranahmedse" target="_blank">Kamran Ahmed</a></span> to be a very useful resource in guiding what technologies I should learn next. In the near future, I hope to cover JavaScript as well as crucial frameworks such as React.js and Node.js.
-                </div>   
-            </div>
-            <!--footer-->
-            <div class="max-w-screen-xl py-5 mx-auto">
-                <footer class="flex flex-row">
-                    <div>
-                        &copy;2022 Dylan Spektor 
-                    </div>
-                    <div class="ml-auto">
-                        <a href="https://github.com/spektordylan" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github hover:fill-emerald-200 dark:hover:fill-emerald-500"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        </a>
-                    </div>
-                </footer>
             </div>
         </div>
+            <!--footer-->
+        <div class="max-w-screen-xl py-5 mx-auto container">
+            <footer class="flex-row flex">
+                <div>
+                    &copy;2022 Dylan Spektor 
+                </div>
+                <div class="ml-auto">
+                    <a href="https://github.com/spektordylan" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github hover:fill-emerald-100 dark:hover:fill-slate-800"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </footer>
+        </div> 
         <script src="./apps.js"></script>
     </body>
 </html> 
