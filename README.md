@@ -4,4 +4,4 @@
 
 **Feel free to explore my first project - [this website!](https://spektordylan.github.io/) (Created with TailwindCSS)**
 
-<sub>**Takes inspiration from [Vedant A.](https://github.com/rpxs)'s [personal site](https://rpxs.me/)**</sub>
+<sub>**Some inspiration taken from [Vedant A.](https://github.com/rpxs)'s [personal site](https://rpxs.me/)**</sub>
