@@ -13,19 +13,21 @@
   
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
-    background-color: black;
+    width: 100px;
+    background-color: rgb(27, 37, 51);
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 3px 0;
+    border-style: solid;
+    border-color: gray;
     
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
     bottom: 103%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -45px;
   }
   
   .tooltip:hover .tooltiptext {
