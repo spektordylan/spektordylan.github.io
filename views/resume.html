@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="../resources/css/site.css" rel="stylesheet">
+
+  <script>
+    let saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-bs-theme', saved);
+      let icon = document.querySelector('#themeToggle i');
+      if (saved == 'dark') icon.classList.replace('fa-moon', 'fa-sun');
+    }
+  </script>
+
+  <link rel="stylesheet" href="../resources/css/resume.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container my-3">
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link active fs-5 mx-3" href="./home.html">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fs-5 mx-3" href="./resume.html">Resume</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fs-5 mx-3" href="./projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fs-5 mx-3" href="./hobbies.html">Hobbies</a>
+            </li>
+        </ul>
+        </div>
+
+        <div class="d-flex align-items-center ms-auto">
+        <button class="btn btn-outline-secondary"
+            onclick="let d=document.documentElement, t=d.getAttribute('data-bs-theme');
+                    t=t=='dark'?'light':'dark';
+                    d.setAttribute('data-bs-theme',t);
+                    localStorage.setItem('theme',t);
+                    this.firstElementChild.classList.toggle('fa-sun');
+                    this.firstElementChild.classList.toggle('fa-moon');">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        </div>
+
+    </div>
+    </nav>
+  
+  <div class="container py-5" style="max-width: 900px;" id="resume">
+    <a href="../resources/documents/Dylan Spektor Resume.pdf" 
+    class="h5 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
+    target="_blank" download="Dylan Spektor Resume.pdf"><i class="fa-solid fa-download"></i> Download as PDF</a>
+    <p></p>
+    <p class="h1 center"> Dylan Spektor </p>
+    <p class="h4 center pb-3">spektordylan@gmail.com | Boulder, CO</p>
+
+    <p class="h5 bold"> EDUCATION & HONORS </p>
+    <hr class="solid">
+
+    <div class="item-heading">
+      <span class="bold">University of Colorado Boulder</span>
+      <span class="bold">Expected: May 2027</span>
+    </div>   
+    <p class="item-subheading">B.S. Computer Science and B.S. Applied Mathematics</p>
+    <ul>
+      <li><strong>GPA:</strong> 4.0; CU Quants, Engineering Honors Program, Quantum Scholars, HackCU</li>
+      <li><strong>Relevant Coursework:</strong> Advanced Data Science, Probability and Statistics, Algorithms, Numerical Methods and Scientific Computing, Software Development Methods.</li>
+    </ul>
+
+    <div class="item-heading">
+      <span class="bold">Colorado Early Colleges Douglas County North</span>
+      <span class="bold">May 2025</span>
+    </div>
+    <p class="item-subheading">A.S. Computer Science (Dual Enrollment at Arapahoe Community College)</p>
+    <ul>
+      <li><strong>GPA:</strong> 4.85/4.0; Student Ambassador, Phi Theta Kappa Honor Society Member</li>
+      <li><strong>Relevant Coursework: </strong>Computer Architecture/Assembly Programming, Multivariable Calculus, Differential Equations & Linear Algebra.</li>
+      <li><strong>Honors & Awards:</strong>  1580 SAT, National Merit Finalist, top 5% rank, CyberPatriot Platinum Tier Competitor. </li>
+    </ul>
+
+    <p class="h5 bold"> EXPERIENCE </p>
+    <hr class="solid">
+    <div class="item-heading">
+      <span class="bold">CU Quants Fund</span>
+      <span class="bold">October 2025 – Present</span>
+    </div>
+    <p class="item-subheading">Quantitative Developer</p>
+    <ul>
+      <li>Build and optimize high-performance trading infrastructure, developing robust systems for strategy execution, market data processing, and real-time risk monitoring. </li>
+      <li>Performed EDA on historical orderbook data, modeling spread of stablecoin assets to identify market making opportunities. Aimed to provide liquidity for large institutional flow outside immediate top-of-book.</li>
+      <li>Designing and implementing Python market-making bot for OKX US crypto exchange.</li>
+    </ul>
+
+    <div class="item-heading">
+      <span class="bold">AIR Communities</span>
+      <span class="bold">June 2023 – June 2025</span>
+    </div>
+    <p class="item-subheading">IT Service Technician (Denver Tech Center)</p>
+    <ul>
+      <li>Remote tech support for employees of nation-wide luxury apartment portfolio. Assist with account lockouts, password resets, and other technical issues. Manage business portal as system admin.</li>
+      <li>Perform asset management, setting up phones and leading an effort to wipe 150+ retired devices for donation.</li>
+      <li>Created custom recovery keys for unsupported Surface laptop models in Windows 11 update project.</li>
+    </ul>
+
+    <p class="h5 bold"> PROJECTS </p>
+    <hr class="solid">
+    
+    <div class="item-heading">
+      <span class="bold">Perovskite Solar Cell Research</span>
+      <span class="bold">Aug 2025 – Dec 2025</span>
+    </div>
+    <p>
+      Created research proposal to analyze effect of transport layer application method on cell efficiency degradation. Performed bootstrap resampling of degradation time series within measurement uncertainty, and refit models to generate parameter distributions, demonstrating statistically significant differences in degradation rates.
+    </p>
+
+    <div class="item-heading">
+      <span class="bold">Chemical Inventory Management System</span>
+      <span class="bold">Jan 2024 – May 2024</span>
+    </div>
+    <p>
+      Desktop application for laboratories to track, search, filter, and generate audits of chemical inventories. Includes UI customization settings, several concurrent windows, descriptive error handling, and file handling. Created from scratch using JavaFX framework and object-oriented Java principles for Computer Science course.
+    </p>
+
+    <div class="item-heading">
+      <span class="bold">Measuring Gravitational Acceleration Using a Simple Pendulum</span>
+      <span class="bold">April 2024</span>
+    </div>
+    <p>
+      Led a group to design and build a photogate-based pendulum apparatus, applying uncertainty analysis and modeling inaccuracies to optimize setup and achieve a six-significant-figure result with &lt;1% deviation and &lt;2% uncertainty.
+    </p>
+
+
+
+    <p class="h5 bold"> SKILLS, INTERESTS & CERTIFICATIONS </p>
+    <hr class="solid">
+    <ul>
+      <li><strong>Skills: </strong> Python (pandas, numpy, matplotlib), object oriented Java, probability, data visualization, linear algebra</li>
+      <li><strong>Interests: </strong> quantum computing, music production, basketball, bouldering, biking, competitive math</li>
+      <li><strong>Certifications: </strong> CompTIA Network+, Microsoft Office Specialist, Seal of Biliteracy</li>
+    </ul>
+
+  </div>
+
+  
+
+  <footer class="bg-body-tertiary text-body-secondary text-center text-lg-start mt-5">
+      <div class="container p-4">
+          <div class="row justify-content-center">
+              <div class="col-auto">
+                  <a href="https://github.com/spektordylan" target="_blank" class="text-body mx-3">
+                      <i class="fab fa-github fa-2x"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/dylanspektor" target="_blank" class="text-body mx-3">
+                      <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="text-center text-body-secondary py-2 border-top">
+          © 2026 Dylan Spektor
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
