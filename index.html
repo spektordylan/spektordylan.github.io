@@ -10,6 +10,9 @@
     src: url('./fonts/better_vcr/BetterVCR 25.09.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
   }
 
     :root {
@@ -36,7 +39,7 @@
       font-family: 'better_vcr', 'Courier New', monospace, sans-serif;
       background: var(--bg);
       color: var(--text);
-      font-size: 13px;
+      font-size: 18px;
       line-height: 1.7;
       display: flex;
     }
@@ -69,7 +72,7 @@
       color: var(--nav-text);
       text-decoration: none;
       padding: 0.75rem 1rem;
-      font-size: 11px;
+      font-size: 16px;
       letter-spacing: 0.5px;
       transition: color 0.15s;
     }
@@ -80,7 +83,7 @@
 
     /* ─── LAYOUT ─── */
     .container {
-      max-width: 860px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
     }
@@ -88,7 +91,7 @@
     /* ─── HERO ─── */
     .hero {
       display: grid;
-      grid-template-columns: 140px 1fr auto;
+      grid-template-columns: 160px 1fr auto;
       gap: 1.5rem;
       align-items: start;
       padding-bottom: 1.5rem;
@@ -97,8 +100,8 @@
     }
 
     .hero-photo {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       background: var(--tag-bg);
       border: 2px solid var(--border);
       display: flex;
@@ -127,13 +130,13 @@
 
     .hero-info .subtitle {
       color: var(--muted);
-      font-size: 10px;
+      font-size: 14px;
     }
 
     .hero-info p {
-      font-size: 10px;
+      font-size: 14px;
       color: var(--text);
-      max-width: 500px;
+      max-width: 750px;
       line-height: 1.6;
     }
 
@@ -141,7 +144,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
-      font-size: 11px;
+      font-size: 14px;
       align-items: flex-end;
     }
 
@@ -156,7 +159,7 @@
 
     /* ─── SECTION HEADINGS ─── */
     h2 {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: normal;
       letter-spacing: 1px;
       margin-bottom: 1.25rem;
@@ -176,17 +179,17 @@
 
     .news-list li {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 0.5rem;
       padding: 0.5rem 0;
       border-bottom: 1px solid var(--border);
-      font-size: 10px;
+      font-size: 14px;
       align-items: baseline;
     }
 
     .news-date {
       color: var(--muted);
-      font-size: 10px;
+      font-size: 14px;
     }
 
     /* ─── PROJECTS ─── */
@@ -209,7 +212,7 @@
     }
 
     .project-card h3 {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: normal;
       letter-spacing: 0.5px;
       margin-bottom: 0.3rem;
@@ -226,7 +229,7 @@
 
     .project-card .desc {
       color: var(--muted);
-      font-size: 11px;
+      font-size: 14px;
       margin-bottom: 0.6rem;
       line-height: 1.7;
     }
@@ -240,7 +243,7 @@
     .tag {
       background: var(--tag-bg);
       color: var(--muted);
-      font-size: 9px;
+      font-size: 12px;
       padding: 2px 6px;
       letter-spacing: 0.5px;
       border: 1px solid var(--border);
@@ -265,7 +268,7 @@
     }
 
     .resume-block p {
-      font-size: 11px;
+      font-size: 14px;
       color: var(--muted);
       margin-top: 0.25rem;
     }
@@ -276,7 +279,7 @@
       color: white;
       text-decoration: none;
       padding: 0.5rem 1rem;
-      font-size: 10px;
+      font-size: 16px;
       letter-spacing: 1px;
       border: none;
       cursor: pointer;
@@ -308,27 +311,27 @@
 
     .entry {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 0.5rem;
-      font-size: 10px;
+      font-size: 16px;
       padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border);
     }
 
     .entry-date {
       color: var(--muted);
-      font-size: 10px;
+      font-size: 14px;
       padding-top: 2px;
     }
 
     .entry-title {
-      font-size: 11px;
+      font-size: 16px;
       margin-bottom: 0.1rem;
     }
 
     .entry-sub {
       color: var(--muted);
-      font-size: 10px;
+      font-size: 16px;
     }
 
     /* ─── FOOTER ─── */
@@ -337,7 +340,7 @@
       margin-top: 3rem;
       padding: 1.5rem 0;
       text-align: center;
-      font-size: 10px;
+      font-size: 16px;
       color: var(--muted);
     }
 
@@ -358,6 +361,16 @@
         grid-template-columns: 1fr;
       }
     }
+
+  @media (max-width: 1400px) {
+    nav {
+      display: none;
+    }
+
+    .container {
+      margin-left: 0;
+    }
+}
   </style>
 </head>
 <body>
@@ -385,7 +398,7 @@
           I'm a computer science and applied math student exploring quantitative finance, algorithmic economics, and everything math. Currently working on an innovative prediction market prototype.
         </p>
         <br>
-        <p style="font-size:10px; color:var(--muted)">
+        <p style="font-size:14px; color:var(--muted)">
           📍 Boulder, CO · dylan.spektor@colorado.edu
         </p>
       </div>
@@ -435,7 +448,7 @@
             Original pairs trading strategy developed with advanced data science techniques. Apply Gaussian Mixture Models for regime signaling and MinHash for historical return predictions to provide combined trade signals on cointegrated equity pairs in the S&P 500.
             <br>
             <br>
-            <a href="https://github.com/spektordylan/pairs-trading-ml" target="_blank" rel="noopener noreferrer" style="color:var(--link)">GitHub Repo</a> | <a href="./doc/CSCI_4022_Project.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--link)">Report</a> | <a href="https://youtu.be/mBwwjQfDIAM" target="_blank" rel="noopener noreferrer" style="color:var(--link)">Presentation Video</a> <span style="font-size:8px; color:var(--muted)">(unenthusiastically delivered on ≪8 hours of sleep)</span>
+            <a href="https://github.com/spektordylan/pairs-trading-ml" target="_blank" rel="noopener noreferrer" style="color:var(--link)">GitHub Repo</a> | <a href="./doc/CSCI_4022_Project.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--link)">Report</a> | <a href="https://youtu.be/mBwwjQfDIAM" target="_blank" rel="noopener noreferrer" style="color:var(--link)">Presentation Video</a> <span style="font-size:11px; color:var(--muted)">(unenthusiastically delivered on ≪8 hours of sleep)</span>
           </p>
           <div class="tags">
               <span class="tag highlight">Featured</span>
@@ -521,7 +534,7 @@
         <a href="./doc/Dylan Spektor Resume.pdf" target="_blank" class="btn">Download PDF</a>
       </div>
 
-      <h3 style="font-size:10px; letter-spacing:1px; margin-bottom:1rem; font-weight:normal; text-transform:uppercase;">Education</h3>
+      <h3 style="font-size:16px; letter-spacing:1px; margin-bottom:1rem; font-weight:normal; text-transform:uppercase;">Education</h3>
       <div class="entry-list" style="margin-bottom:2rem">
         <div class="entry">
           <span class="entry-date">2025 – Present</span>
@@ -539,8 +552,8 @@
         </div>
       </div>
 
-      <h3 style="font-size:10px; letter-spacing:1px; margin-bottom:1rem; font-weight:normal; text-transform:uppercase;">Featured Coursework</h3>
-      <div style="font-size:10px; color:var(--muted); line-height:2">
+      <h3 style="font-size:16px; letter-spacing:1px; margin-bottom:1rem; font-weight:normal; text-transform:uppercase;">Featured Coursework</h3>
+      <div style="font-size:14px; color:var(--muted); line-height:2">
         CSCI 4022: Advanced Data Science <br>
         APPM 4600: Numerical Methods & Scientific Computing <br>
         CSCI 3155: Principles of Programming Languages <br>
@@ -554,7 +567,7 @@
     <!-- ─── CONTACT ─── -->
     <section id="contact">
       <h2>Contact</h2>
-      <p style="font-size:10px; color:var(--muted); max-width:480px; line-height:1.9">
+      <p style="font-size:14px; color:var(--muted); line-height:1.9">
         Best way to reach me is email: <a href="mailto:dylan.spektor@colorado.edu" style="color:var(--link)">dylan.spektor@colorado.edu</a>.<br>
         I'm also on <a href="https://github.com/spektordylan" target="_blank" style="color:var(--link)">GitHub</a> and <a href="https://www.linkedin.com/in/dylanspektor/" target="_blank" style="color:var(--link)">LinkedIn</a>.
       </p>
