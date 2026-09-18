@@ -6,8 +6,8 @@
   <title>Dylan Spektor</title>
   <style>
   @font-face {
-    font-family: 'better_vcr';
-    src: url('./fonts/better_vcr/BetterVCR 25.09.ttf') format('truetype');
+    font-family: 'vt323';
+    src: url('./fonts/VT323/VT323-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     image-rendering: pixelated;
@@ -29,6 +29,10 @@
       --link: #2980b9;
     }
 
+    html {
+      font-size: 20px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -36,13 +40,21 @@
     }
 
     body {
-      font-family: 'better_vcr', 'Courier New', monospace, sans-serif;
+      font-family: 'vt323', 'Courier New', monospace, sans-serif;
       background: var(--bg);
       color: var(--text);
-      font-size: 18px;
+      font-size: 1rem;
       line-height: 1.7;
-      display: flex;
+      display: block;
     }
+
+    .location-line,
+    .resume-section-heading,
+    .coursework,
+    .contact-text {
+      font-size: 0.95rem;
+    }
+    
 
     /* ─── NAV ─── */
     nav {
@@ -72,7 +84,7 @@
       color: var(--nav-text);
       text-decoration: none;
       padding: 0.75rem 1rem;
-      font-size: 16px;
+      font-size: 1.1rem;
       letter-spacing: 0.5px;
       transition: color 0.15s;
     }
@@ -84,6 +96,7 @@
     /* ─── LAYOUT ─── */
     .container {
       max-width: 1080px;
+      width: min(1080px, calc(100vw - 260px));
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
     }
@@ -108,7 +121,7 @@
       align-items: center;
       align-self: center;
       justify-content: center;
-      font-size: 9px;
+      font-size: 0.35rem;
       color: var(--muted);
       text-align: center;
       line-height: 1.4;
@@ -122,29 +135,44 @@
     }
 
     .hero-info h1 {
-      font-size: 22px;
+      font-size: 1.75rem;
       font-weight: normal;
       letter-spacing: 1px;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.15rem;
     }
 
     .hero-info .subtitle {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 1.1rem;
     }
 
     .hero-info p {
-      font-size: 14px;
+      font-size: 1rem;
       color: var(--text);
       max-width: 750px;
       line-height: 1.6;
+    }
+
+    .blog-link {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .blog-link a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .blog-link a:hover {
+      text-decoration: underline;
     }
 
     .hero-links {
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
-      font-size: 14px;
+      font-size: 0.9rem;
       align-items: flex-end;
     }
 
@@ -159,7 +187,7 @@
 
     /* ─── SECTION HEADINGS ─── */
     h2 {
-      font-size: 18px;
+      font-size: 1.5rem;
       font-weight: normal;
       letter-spacing: 1px;
       margin-bottom: 1.25rem;
@@ -169,7 +197,7 @@
     }
 
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 1.5rem;
     }
 
     /* ─── NEWS / ACTIVITY ─── */
@@ -183,13 +211,13 @@
       gap: 0.5rem;
       padding: 0.5rem 0;
       border-bottom: 1px solid var(--border);
-      font-size: 14px;
+      font-size: 1.2rem;
       align-items: baseline;
     }
 
     .news-date {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 1.1rem;
     }
 
     /* ─── PROJECTS ─── */
@@ -212,7 +240,7 @@
     }
 
     .project-card h3 {
-      font-size: 16px;
+      font-size: 1.1rem;
       font-weight: normal;
       letter-spacing: 0.5px;
       margin-bottom: 0.3rem;
@@ -229,7 +257,7 @@
 
     .project-card .desc {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 0.9rem;
       margin-bottom: 0.6rem;
       line-height: 1.7;
     }
@@ -238,6 +266,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem;
+      font-size: .7rem;
     }
 
     .tag {
@@ -268,7 +297,7 @@
     }
 
     .resume-block p {
-      font-size: 14px;
+      font-size: 0.9rem;
       color: var(--muted);
       margin-top: 0.25rem;
     }
@@ -279,7 +308,7 @@
       color: white;
       text-decoration: none;
       padding: 0.5rem 1rem;
-      font-size: 16px;
+      font-size: 1rem;
       letter-spacing: 1px;
       border: none;
       cursor: pointer;
@@ -313,25 +342,25 @@
       display: grid;
       grid-template-columns: 160px 1fr;
       gap: 0.5rem;
-      font-size: 16px;
+      font-size: 1rem;
       padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border);
     }
 
     .entry-date {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 0.9rem;
       padding-top: 2px;
     }
 
     .entry-title {
-      font-size: 16px;
+      font-size: 1rem;
       margin-bottom: 0.1rem;
     }
 
     .entry-sub {
       color: var(--muted);
-      font-size: 16px;
+      font-size: 1rem;
     }
 
     /* ─── FOOTER ─── */
@@ -340,7 +369,7 @@
       margin-top: 3rem;
       padding: 1.5rem 0;
       text-align: center;
-      font-size: 16px;
+      font-size: 1rem;
       color: var(--muted);
     }
 
@@ -353,6 +382,7 @@
         align-items: flex-start;
         flex-direction: row;
         flex-wrap: wrap;
+        font-size: 1rem;
       }
       .entry {
         grid-template-columns: 1fr;
@@ -368,7 +398,8 @@
     }
 
     .container {
-      margin-left: 0;
+      width: min(1080px, calc(100vw - 3rem));
+      margin: 0 auto;
     }
 }
   </style>
@@ -377,6 +408,7 @@
 
   <nav>
     <a href="#" class="active">Home</a>
+    <a href="./blog.html">Blog</a>
     <a href="#projects">Projects</a>
     <a href="#resume">Resume</a>
     <a href="#contact">Contact</a>
@@ -395,10 +427,13 @@
         <div class="subtitle">Undergraduate Student · University of Colorado Boulder</div>
         <br>
         <p>
-          I'm a computer science and applied math student exploring quantitative finance, automated reasoning, and applied math.
+          I'm a computer science and applied math student exploring automated reasoning & formal verification, AI, and quantitative finance.
+        </p>
+        <p class="blog-link">
+          <a href="./blog.html">Check out my blog :)</a>
         </p>
         <br>
-        <p style="font-size:14px; color:var(--muted)">
+        <p class="location-line" style="color:var(--muted)">
           📍 Boulder, CO · dylan.spektor@colorado.edu
         </p>
       </div>
@@ -555,12 +590,12 @@
       <div class="resume-block">
         <div>
         <span>Resume</span>
-          <p>last updated August 2026</p>
+          <p>last updated September 2026</p>
         </div>
         <a href="./doc/Dylan_Spektor_Resume.pdf" target="_blank" class="btn">Download PDF</a>
       </div>
 
-   <h3 style="font-size:16px; letter-spacing:1px; margin-bottom:1rem; font-weight:normal; text-transform:uppercase;">Education</h3>
+   <h3 class="resume-section-heading" style="letter-spacing:1px; margin-bottom:1rem; font-weight:normal; text-transform:uppercase;">Education</h3>
     <div class="entry-list" style="margin-bottom:2rem">
       <div class="entry">
         <span class="entry-date">2025 – Present</span>
@@ -587,8 +622,8 @@
       </div>
     </div>
 
-      <h3 style="font-size:16px; letter-spacing:1px; margin-bottom:1rem; font-weight:normal; text-transform:uppercase;">Featured Coursework</h3>
-      <div style="font-size:14px; color:var(--muted); line-height:2">
+      <h3 class="resume-section-heading" style="letter-spacing:1px; margin-bottom:1rem; font-weight:normal; text-transform:uppercase;">Featured Coursework</h3>
+      <div class="coursework" style="color:var(--muted); line-height:2">
         CSCI 4022: Advanced Data Science <br>
         APPM 4600: Numerical Methods & Scientific Computing <br>
         CSCI 3155: Principles of Programming Languages <br>
@@ -602,7 +637,7 @@
     <!-- ─── CONTACT ─── -->
     <section id="contact">
       <h2>Contact</h2>
-      <p style="font-size:14px; color:var(--muted); line-height:1.9">
+      <p class="contact-text" style="color:var(--muted); line-height:1.9">
         Best way to reach me is email: <a href="mailto:dylan.spektor@colorado.edu" style="color:var(--link)">dylan.spektor@colorado.edu</a>.<br>
         I'm also on <a href="https://github.com/spektordylan" target="_blank" style="color:var(--link)">GitHub</a> and <a href="https://www.linkedin.com/in/dylanspektor/" target="_blank" style="color:var(--link)">LinkedIn</a>.
       </p>

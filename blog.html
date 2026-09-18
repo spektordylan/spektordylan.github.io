@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Dylan Spektor</title>
+  <style>
+    @font-face {
+      font-family: 'vt323';
+      src: url('./fonts/VT323/VT323-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      image-rendering: pixelated;
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :root {
+      --bg: #f5f4ef;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #5E9D34;
+      --accent2: #2980b9;
+      --border: #ccc;
+      --nav-bg: #1a1a1a;
+      --nav-text: #f5f4ef;
+      --tag-bg: #e8e8e0;
+      --card-bg: #ffffff;
+      --link: #2980b9;
+      --base-size: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'vt323', 'Courier New', monospace, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: var(--base-size);
+      line-height: 1.7;
+      display: block;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      width: 180px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-right: 3px solid var(--accent);
+    }
+
+    nav a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      transition: color 0.15s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 900px;
+      width: min(900px, calc(100vw - 260px));
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-size: 34px;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--text);
+      display: inline-block;
+    }
+
+    .feed {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .post {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent2);
+      padding: 1.1rem 1.25rem;
+    }
+
+    .post-meta {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 0.5rem;
+    }
+
+    .post h3 {
+      font-size: 26px;
+      font-weight: normal;
+      margin-bottom: 0.55rem;
+    }
+
+    .post h3 a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .post h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .post p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .template-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+    }
+
+    .template-box .meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 0.5rem;
+    }
+
+    .template-box h3 {
+      font-size: 24px;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .template-box .byline {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 1rem;
+    }
+
+    .template-box h4 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 1.25rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+    }
+
+    .template-box p,
+    .template-box li {
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .template-box ul,
+    .template-box ol {
+      margin: 0.75rem 0 0.75rem 1.5rem;
+    }
+
+    .template-box .code-like {
+      display: block;
+      background: #f1f1eb;
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      margin-top: 0.75rem;
+      white-space: pre-wrap;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1400px) {
+      nav {
+        display: none;
+      }
+
+      .container {
+        width: min(900px, calc(100vw - 3rem));
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./blog.html" class="active">Blog</a>
+    <a href="./index.html#projects">Projects</a>
+    <a href="./index.html#resume">Resume</a>
+    <a href="./index.html#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <header class="page-header">
+      <h1>Blog</h1>
+      <p>Frantic writings exploring ideas relating to my research with varying technicality.</p>
+    </header>
+
+    <section>
+      <h2>Posts</h2>
+      <div class="feed">
+        <article class="post">
+          <div class="post-meta">September 17, 2026</div>
+          <h3><a href="./post.html">Dialectical Musings on Alignment</a></h3>
+          <p>
+            Hegel, Zizek, and Alignment.
+          </p>
+        </article>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
