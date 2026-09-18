@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dialectical Musings on AI Alignment</title>
+  <style>
+    @font-face {
+      font-family: 'vt323';
+      src: url('./fonts/VT323/VT323-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      image-rendering: pixelated;
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :root {
+      --bg: #f5f4ef;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #5E9D34;
+      --accent2: #2980b9;
+      --border: #ccc;
+      --nav-bg: #1a1a1a;
+      --nav-text: #f5f4ef;
+      --card-bg: #ffffff;
+      --link: #2980b9;
+      --base-size: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'vt323', 'Courier New', monospace, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: var(--base-size);
+      line-height: 1.7;
+      display: block;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      width: 180px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-right: 3px solid var(--accent);
+    }
+
+    nav a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      transition: color 0.15s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 900px;
+      width: min(900px, calc(100vw - 260px));
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--link);
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .article {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent2);
+      padding: 1.5rem 1.5rem 2rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 20px;
+      margin-bottom: 0.75rem;
+    }
+
+    .article h1 {
+      font-size: 38px;
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .byline {
+      color: var(--muted);
+      font-size: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .article h2 {
+      font-size: 26px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin: 1.5rem 0 0.5rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--text);
+      display: inline-block;
+    }
+
+    .article p,
+    .article li {
+      font-size: 23px;
+      line-height: 1.9;
+      color: var(--text);
+    }
+
+    .article p {
+      margin-bottom: 1rem;
+    }
+
+    .article ul,
+    .article ol {
+      margin: 0.75rem 0 1rem 1.5rem;
+    }
+
+    .article blockquote {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin: 1.25rem 0;
+      color: var(--muted);
+      font-size: 21px;
+    }
+
+    @media (max-width: 1400px) {
+      nav {
+        display: none;
+      }
+
+      .container {
+        width: min(900px, calc(100vw - 3rem));
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./blog.html" class="active">Blog</a>
+    <a href="./index.html#projects">Projects</a>
+    <a href="./index.html#resume">Resume</a>
+    <a href="./index.html#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <a class="back-link" href="./blog.html">← Back to blog</a>
+
+    <article class="article">
+      <div class="meta">September 17, 2026</div>
+      <h1>Dialectical Musings on Alignment</h1>
+      <div class="byline">By Dylan Spektor</div>
+
+      <p>This blog post describes an undergraduate's attempt at piercing AI alignment philosophically. This process involves invoking philosophical concepts in rapid succession, each expanding upon a previous beaten idea in a sort of Pokemon battle format, enventually teaching us something about friendship along the way. </p>
+
+<p>Be warned that, henceforth, names like “Hegel” and “Zizek” are interchangeable with “Spektor’s Hegel” and “Spektor’s Zizek,” signifying a transformation into horribly novice outlines of incredibly dense bodies of thought. Nevertheless, one could argue that a complete understanding of the mentioned philosophies is not necessary for gleaning insights that enable us to explore new perspectives on alignment.</p>
+
+<h2>Hegel, transformative creativity, and contradiction</h2>
+
+<p>The Hegelian dialectic is often introduced as a three-step process of thesis, antithesis, synthesis, e.g. “Work from home, work in the office, hybrid work.” While this chronological formula is quite popular and rightfully serves as a basis of some interesting technical work (see <a href="https://github.com/Hmbown/Hegelion">Hegelion</a>), it was never used by Hegel himself, but popularized by later thinkers.</p>
+
+<p>The true nature of the Hegelian dialectic, which I do not claim to fully grasp, is better explained with <em>Aufhebung</em> (translated as “sublation”), a German verb which can simultaneously be used to express the abolishment or cancellation of something as well as the preservation or elevation of something. Think of a seed. A seed is a seed, but it contains the idea or the essence of a plant. Thus, it negates its current form as a seed, destroying its initial state, while preserving the idea of the plant and ultimately elevating itself into the higher form of the plant. The contradiction of seed as seed vs. seed as plant drives the seed to grow into a plant.</p>
+
+<p>I believe that this deep underlying notion of sublation, which I will now coarsely treat as some kind of inherently driving contradiction, carries weight when considering how AI agents act under ambiguous or contradictory instructions. Consider that, for all the academic breakthroughs AI has played a part in, many reach a consensus that, despite truly finding novel approaches to significant conjectures (I purposely avoid namedropping the Navier-Stokes-shaped can of worms), AI lacks transformative creativity. To define transformative creativity, simply consider whether AI is currently capable of producing works whose form completely undermines and shocks human expectations purely by the merit of their composition. Think Dostoevsky novels, Picasso paintings, and so on. I think we agree that this capability is far out, maybe for the better.</p>
+
+<p>But inquiring into the nature of transformative creativity is not so difficult. Any analysis of great literature, art, and music can be interpreted as praising some kind of subversion or unresolved tension (contradiction, if you will) which is built into the very fabric of the piece. Shallow works of art are ones that meet our expectations exactly, lacking any interesting contradiction. Great works of art evade any kind of formalization or existing order, leaving you in a temporarily broken state of simultaneous depression and hope. Let’s move on…</p>
+
+<p>I arrive at the conclusion that the key to achieving transformative creativity may be facilitating some sort of dialectical tension, whose underlying contradiction is precisely the driving force for an action.</p>
+
+<p>How do we translate these wishy-washy notions into a technical program? Consider the Trolley Problem. We have two specifications we may feed an agent: “Do not intentionally kill people” and “Minimize loss of human life.” Believe it or not, we cannot achieve both at once. Do we pick one specification and ignore the other? Do we take a weighted combination of each specification? Do we preserve both specifications, but designate one as superior? In its present form, the problem is irreconcilable.</p>
+
+<p>My initial solution is proposing a learning process of some sort. Both specifications are given in natural language; they are not binary variables but rather individual conflicting instructions. Therefore, is there a way to take in both, and learn some kind of underlying relationship between the two? That is, can we discover a latent representational structure that does not neglect either of the specifications? It seems like the answer is no, and even if we were able to achieve this, the reality remains that we either pull the lever or we don’t. But doing so for a third, more nuanced reason rather than drawing from a combination of given specifications signifies progress in my eyes.</p>
+
+<h2>Zizek's maxim, creating a new representation</h2>
+
+<p>I now transition from Hegel to Zizek, a modern Hegelian thinker, to extend the previous solution. Zizek is captivated by the slogan “I would prefer not to,” which is borrowed from Herman Melville’s 1853 short story <em>Bartleby, the Scrivener</em>, in which the clerk Bartleby responds to his employer’s demands with this phrase. Crucially, Zizek argues this maxim is different from the passive “I don’t want to” in that it affirms a non-predicate rather than simply denying a predicate. In other words, one who says “I don’t want to” implicitly accepts the demand as valid while communicating refusal to oblige. Zizek’s slogan does not fall victim to accepting the demand as such; rather, it withdraws participation from the symbolic structure in which the demand makes sense altogether, declining the option universe itself rather than an option within it.</p>
+
+<p>Consider our Trolley Problem once again. While it is difficult to explain why, if, upon being given the context of the dilemma and its relevant specifications, an agent were to respond “I would prefer not to” to the demand of either pulling or not pulling the lever, our expectations would be subverted. Suddenly, the agent seems slightly more human; you can’t do that! We therefore arrive at a more transformatively creative response.</p>
+
+<p>Yet training the agent to sit on its hands and deny reality is not exactly revolutionary. As before, the ultimate judgement falls on the action the agent chooses, and that includes non-action. The specifications remain irreconcilable.</p>
+
+<p>This is where the refusal to pick from a set of possible actions within the current representation space leads to a revolutionary action. Rather than acting upon a given option, the agent detects a latent cause of irreconcilability within the representation space and seeks to transform the representation space itself to address the lack. Rather than returning a prescribed action or non-action, the agent returns a new, evolved representational space which addresses an inadequacy in the previous space that must exist given the possibility of irreconcilable conditions. This may be further philosophically explored as an encounter with the Lacanian Real which violently mutates the existing Symbolic Order. However, I am tired and embarrassed, and thus we conclude with a proposed schema that not only preserves some latent sublation within contradictory specifications, but responds to contradiction with the creative production of a more informed representation of the situation. We may then explore branching or layered representations of a problem, which may yield counterintuitive operations that ultimately provide a deep structure for action under contradiction.</p>
+
+<h2>Conclusion</h2>
+
+<p>Obviously, the above ruminations did not lead me to solve the trolley problem or alignment. The purpose of this post was to reason about how agents may handle contradictions and dilemmas gracefully and intelligently, potentially influencing them to become more creatively aligned.</p>
+
+<p>More generally, I believe implementations which extend existing philosophies through formalization will outperform approaches such as presupposing frameworks like utilitarianism and reverse engineering a mathematical representation. For better or for worse, philosophical work and technical implementation seem coupled. Or synthesized?</p>
+    </article>
+  </div>
+</body>
+</html>
