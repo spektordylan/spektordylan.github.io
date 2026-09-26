@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Papers</title>
+
+  <style>
+    @font-face {
+      font-family: 'vt323';
+      src: url('./fonts/VT323/VT323-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      image-rendering: pixelated;
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :root {
+      --bg: #f5f4ef;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #5E9D34;
+      --border: #ccc;
+      --nav-bg: #1a1a1a;
+      --nav-text: #f5f4ef;
+      --link: #2980b9;
+    }
+
+    html {
+      font-size: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'vt323', 'Courier New', monospace, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      width: 180px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-right: 3px solid var(--accent);
+    }
+
+    nav a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      transition: color 0.15s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 1080px;
+      width: min(1080px, calc(100vw - 260px));
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--text);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      text-transform: lowercase;
+    }
+
+    .paper-list {
+      list-style: none;
+      max-width: 850px;
+    }
+
+    .paper-list li {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.05rem;
+    }
+
+    .paper-list a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .paper-list a:hover {
+      text-decoration: underline;
+    }
+
+    .paper-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.1rem;
+    }
+
+    @media (max-width: 1400px) {
+      nav {
+        display: none;
+      }
+
+      .container {
+        width: min(1080px, calc(100vw - 3rem));
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./papers.html" class="active">Papers</a>
+  </nav>
+
+  <main class="container">
+    <h1>Papers I'm Reading</h1>
+
+    <section>
+      <h2>Market-Making</h2>
+
+      <ul class="paper-list">
+        <li>
+          Olivier Guéant, Charles-Albert Lehalle, Joaquin Fernandez-Tapia:
+          <a href="https://arxiv.org/abs/1105.3115" target="_blank" rel="noopener noreferrer">
+            Dealing with the Inventory Risk: A Solution to the Market Making Problem
+          </a>
+        </li>
+
+        <li>
+          Sasha Stoikov:
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2970694" target="_blank" rel="noopener noreferrer">
+            The Micro-Price: A High Frequency Estimator of Future Prices
+          </a>
+        </li>
+
+        <li>
+          Marco Avellaneda, Sasha Stoikov:
+          <a href="https://math.nyu.edu/inmemoriam/avellaneda/HighFrequencyTrading.pdf" target="_blank" rel="noopener noreferrer">
+            High-Frequency Trading in a Limit Order Book
+          </a>
+        </li>
+
+        <li>
+          Philippe Bergault, David Evangelista, Olivier Guéant, Douglas Vieira:
+          <a href="https://arxiv.org/abs/1810.04383" target="_blank" rel="noopener noreferrer">
+            Closed-form Approximations in Multi-asset Market Making
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
