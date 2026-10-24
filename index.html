@@ -90,6 +90,16 @@
       padding-bottom: 1.5rem;
       border-bottom: 1px solid var(--border);
       margin-bottom: 2.5rem;
+
+      background-image:
+      linear-gradient(
+        rgba(245, 244, 239, 0.8),
+        rgba(245, 244, 239, 0.8)
+      ),
+      url("./img/hero-bg.jpg");
+
+      background-size: cover;
+      background-position: center;
     }
 
     .hero-photo {
@@ -117,11 +127,9 @@
       font-size: 2.1rem;
       font-weight: normal;
       letter-spacing: 0.05rem;
-      margin-bottom: 0.15rem;
     }
 
     .hero-info .subtitle {
-      color: var(--muted);
       font-size: 1.05rem;
     }
 
@@ -134,7 +142,8 @@
 
     .blog-link {
       margin-top: 0.75rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      color: blue;
     }
 
     .blog-link a {
@@ -151,7 +160,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
       align-items: flex-end;
     }
 
@@ -194,7 +203,7 @@
 
     .news-date {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
 
     .projects-grid {
@@ -269,6 +278,7 @@
       border: 1px solid var(--border);
       padding: 1.25rem 1.5rem;
       margin-bottom: 1.5rem;
+      font-size: 1.2rem;
     }
 
     .resume-block p {
@@ -323,7 +333,7 @@
 
     .entry-date {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 1rem;
       padding-top: 2px;
     }
 
@@ -374,6 +384,118 @@
         margin: 0 auto;
       }
     }
+
+
+    /* Project categories */
+    .project-category {
+      margin-top: 2.5rem;
+    }
+
+    .project-category-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-category-heading h3 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      letter-spacing: 0.04rem;
+      white-space: nowrap;
+    }
+
+    .project-category-heading::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Current projects: research notebook style */
+    .current-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+
+    .current-heading h3 {
+      font-size: 1.3rem;
+      font-weight: normal;
+    }
+
+    .current-heading span {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .current-projects {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .current-project-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .current-project h4 {
+      font-size: 1.05rem;
+      font-weight: normal;
+      color: var(--link);
+    }
+
+    .current-project time {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .current-project p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-top: 0.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .current-project-header {
+        flex-wrap: wrap;
+      }
+    }
+
+
+    /* Compact, expandable project sections */
+    #projects > h2 { margin-bottom: 0.35rem; }
+    #projects .project-category { margin-top: 1.3rem; }
+    #projects .project-category:first-of-type { margin-top: 0.35rem; }
+    #projects summary { cursor: pointer; list-style: none; user-select: none; }
+    #projects summary::-webkit-details-marker { display: none; }
+    #projects summary::before {
+      content: "▸";
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-right: 0.6rem;
+      display: inline-block;
+      transition: transform 0.15s ease;
+    }
+    #projects details[open] > summary::before { transform: rotate(90deg); }
+    #projects .project-category-heading { margin-bottom: 0; }
+    #projects .project-category-heading::after { content: none; }
+    #projects .project-category-heading .heading-rule {
+      flex: 1; height: 1px; background: var(--border);
+    }
+    #projects .current-heading { justify-content: flex-start; margin-bottom: 0; }
+    #projects .current-heading span { margin-left: auto; }
+    #projects details[open] > .projects-grid,
+    #projects details[open] > .current-projects { margin-top: 0.8rem; }
+    #projects summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   </style>
 </head>
 <body>
@@ -390,22 +512,22 @@
 
     <!-- ─── HERO ─── -->
     <div class="hero" id="about">
-      <div class="hero-photo">
-        <img src="./img/small_headshot.jpg" /> 
-      </div>
+    <div class="hero-photo">
+      <img src="./img/small_headshot.jpg" />
+    </div>
 
       <div class="hero-info">
         <h1>Dylan Spektor</h1>
         <div class="subtitle">Undergraduate Student · University of Colorado Boulder</div>
         <br>
         <p>
-          I'm a computer science and applied math student exploring automated reasoning & formal verification, AI, and quantitative finance.
+          I'm a computer science and applied math student exploring automated reasoning and interdisciplinary approaches to AI safety. I do research at the CU Programming Languages & Verification (CU PLV) lab. 
         </p>
         <p class="blog-link">
-          <a href="./blog.html">Check out my blog :)</a>
+          <a href="./blog.html"><strong>Check out my blog :)</strong></a>
         </p>
         <br>
-        <p class="location-line" style="color:var(--muted)">
+        <p class="location-line">
           📍 Boulder, CO · dylan.spektor@colorado.edu
         </p>
       </div>
@@ -415,6 +537,7 @@
         <a href="https://www.linkedin.com/in/dylanspektor/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="./doc/Dylan_Spektor_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
       </div>
+    
     </div>
 
     <!-- ─── News ─── -->
@@ -422,129 +545,175 @@
       <h2>News</h2>
       <ul class="news-list">
         <li>
-          <span class="news-date">Summer 2026</span>
-          <span>Selected for a yearlong, paid research apprenticeship in automated reasoning under Dr. Evan Chang of the CU Programming Languages and Verification group.</span>
-        </li>
-        <li>
-          <span class="news-date">April 2026</span>
-          <span>Completed three Spring semester projects: a pairs trading strategy, a report on the Riemann Hypothesis, and Virtrade.</span>
-        </li>
-        <li>
-          <span class="news-date">December 2025</span>
-          <span>Switched from physics to math because numbers are sooo much cooler.</span>
-        </li>
-        <li>
-          <span class="news-date">October 2025</span>
-          <span>Joined the CU Quants club as a quantitative developer.</span>
+          <span class="news-date">August 2026</span>
+          <span>Began a yearlong research apprenticeship in automated reasoning under Dr. Bor-Yuh Evan Chang of the CU Programming Languages and Verification group.</span>
         </li>
         <li>
           <span class="news-date">August 2025</span>
-          <span>Started my undergrad at CU Boulder, originally majoring in Computer Science and Engineering Physics.</span>
+          <span>Began my undergrad at CU Boulder, originally majoring in Computer Science and Engineering Physics.</span>
         </li>
 
       </ul>
     </section>
 
-    <!-- ─── PROJECTS ─── -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>SMT-Based Cross-Currency Arbitrage Detection</h3>
-          <p class="desc">
-            A Z3 SMT-based cross-currency arbitrage detector meant as a more expressive alternative to Bellman-Ford. Extended to model fees, nonlinear slippage, and integer lot sizes, revealing capital-dependent arbitrage opportunities missed by traditional graph-based methods.
-            <br>
-            <a href="https://github.com/spektordylan/cyclic-arb-smt" target="_blank" rel="noopener noreferrer" style="color:var(--link)">GitHub Repo</a>
-          </p>
-          <div class="tags">
-              <span class="tag highlight">Featured</span>
-              <span class="tag">Algorithmic Trading</span>
-              <span class="tag">SMT Solving</span>
-              <span class="tag">Z3</span>
-              <span class="tag">Python</span>
-              <span class="tag">Optimization</span>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <h3>Zeroes of the Riemann Zeta Function and Spectral Statistics of Random Matrices</h3>
-          <p class="desc">
-            Complex variables report co-authored with Andrew Yang and Ari Clark. Explains properties of Riemann zeta function through complex analytic methods and explores Gaussian and Circular Unitary Ensembles from random matrix theory as an approach towards solving the Riemann Hypothesis. 
-            <br>
-            <a href="./doc/APPM_4360_Presentation.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--link)">Slides</a>  |  <a href="./doc/APPM_4360_Report.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--link)">Report</a>
-          </p>
-          <div class="tags">
-              <span class="tag highlight">Featured</span>
-              <span class="tag">Complex Analysis</span>
-              <span class="tag">Random Matrix Theory</span>
-              <span class="tag">Spectral Statistics</span>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <h3>Virtrade</h3>
-          <p class="desc">
-            Paper trading web application with real-time market data integration. 
-            Users can buy/sell simulated positions to build trading intuition and climb the leaderboard. 
-            Built as a group project for CSCI 3308.
-          </p>
-          <div class="tags">
-            <span class="tag">Rest APIs</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express</span>
-            <span class="tag">Flask</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Git</span>
-
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>External Quantum Efficiency Degradation in Perovskite Cells</h3>
-          <p class="desc">
+<section id="projects">
+  <h2>Projects</h2>
+  <details class="project-category current-category" open>
+    <summary class="current-heading"><h3>Current</h3><span>work in progress</span></summary>
+    <div class="current-projects">
+<article class="current-project">
+<div class="current-project-header">
+<h4>Demanded Abstract Interpretation Research</h4>
+<time>September 2026–</time>
+</div>
+<p>
+              Working on formal semantics in Lean 4 for graph-based program representations used in static analysis to assist with an upcoming research submission.
+            </p>
+</article>
+<article class="current-project">
+<div class="current-project-header">
+<h4>Robustness of LTL-Guided Reinforcement Learning Under Uncertain Propositions</h4>
+<time>October 2026–</time>
+</div>
+<p>
+              Designing experiments to investigate how multi-task RL agents given instructions in linear temporal logic (LTL) may learn to optimally complete tasks given uncertain observations of environmental variables.
+            </p>
+</article>
+<article class="current-project">
+<div class="current-project-header">
+<h4>PDE Dynamics and Spectral Bias of Neural Networks</h4>
+<time>October 2026–</time>
+</div>
+<p>
+              Investigating how the dynamics of PDE solutions influence spectral bias, a phenomenon in which neural networks learn the lower frequencies of a function before higher frequencies.
+            </p>
+</article>
+    </div>
+  </details>
+  <details class="project-category">
+    <summary class="project-category-heading"><h3>Math</h3><span class="heading-rule"></span></summary>
+    <div class="projects-grid">
+<div class="project-card">
+<h3>Zeroes of the Riemann Zeta Function and Spectral Statistics of Random Matrices</h3>
+<p class="desc">
+              Complex analysis report co-authored with Andrew Yang and Ari Clark. Explains properties of Riemann zeta function through complex analytic methods and explores Gaussian and Circular Unitary Ensembles from random matrix theory as an approach towards solving the Riemann Hypothesis. 
+              <br/>
+<a href="./doc/APPM_4360_Presentation.pdf" rel="noopener noreferrer" style="color:var(--link)" target="_blank">Slides</a>  |  <a href="./doc/APPM_4360_Report.pdf" rel="noopener noreferrer" style="color:var(--link)" target="_blank">Report</a>
+</p>
+<div class="tags">
+<span class="tag">Complex Analysis</span>
+<span class="tag">Random Matrix Theory</span>
+<span class="tag">Spectral Statistics</span>
+</div>
+</div>
+    </div>
+  </details>
+  <details class="project-category">
+    <summary class="project-category-heading"><h3>Quant</h3><span class="heading-rule"></span></summary>
+    <div class="projects-grid">
+<div class="project-card">
+<h3>Treasury Portfolio Optimization Calculator</h3>
+<p class="desc">
+            A minimum-cost Treasury dedication optimizer matching liability cash flows with mixed-integer linear programming, integer bond lots, and rolling surplus cash.
+            <br/>
+<a href="https://github.com/spektordylan/dedicated-portfolio-calculator" rel="noopener noreferrer" style="color:var(--link)" target="_blank">GitHub Repo</a>
+</p>
+<div class="tags">
+<span class="tag">Optimization</span>
+<span class="tag">Linear Programming</span>
+<span class="tag">Python</span>
+</div>
+</div>
+<div class="project-card">
+<h3>SMT-Based Cross-Currency Arbitrage Detection</h3>
+<p class="desc">
+              A Z3 SMT-based cross-currency arbitrage detector meant as a more expressive alternative to Bellman-Ford. Extended to model fees, nonlinear slippage, and integer lot sizes, revealing capital-dependent arbitrage opportunities missed by traditional graph-based methods.
+              <br/>
+<a href="https://github.com/spektordylan/cyclic-arb-smt" rel="noopener noreferrer" style="color:var(--link)" target="_blank">GitHub Repo</a>
+</p>
+<div class="tags">
+<span class="tag">Algorithmic Trading</span>
+<span class="tag">SMT Solving</span>
+<span class="tag">Z3</span>
+<span class="tag">Python</span>
+<span class="tag">Optimization</span>
+</div>
+</div>
+<div class="project-card">
+<h3>Pairs Trading With GMM-MinHash Regime Signaling</h3>
+<p class="desc">
+            Original pairs trading strategy developed with advanced data science techniques. Apply Gaussian Mixture Models for regime signaling and MinHash for historical return predictions to provide combined trade signals on cointegrated equity pairs in the S&amp;P 500.
+            <br/>
+<a href="https://github.com/spektordylan/pairs-trading-ml" rel="noopener noreferrer" style="color:var(--link)" target="_blank">GitHub Repo</a>  |  <a href="./doc/CSCI_4022_Project.pdf" rel="noopener noreferrer" style="color:var(--link)" target="_blank">Report</a>
+</p>
+<div class="tags">
+<span class="tag">Statistical Arbitrage</span>
+<span class="tag">Data Science</span>
+<span class="tag">Python</span>
+<span class="tag">Random Forest</span>
+<span class="tag">Backtesting</span>
+</div>
+</div>
+    </div>
+  </details>
+  <details class="project-category">
+    <summary class="project-category-heading"><h3>Data Science</h3><span class="heading-rule"></span></summary>
+    <div class="projects-grid">
+<div class="project-card">
+<h3>External Quantum Efficiency Degradation in Perovskite Cells</h3>
+<p class="desc">
             Experimental physics research collaboration with NLR (formerly NREL) studying the degradation of perovskite solar cells under stress. Performed bootstrapped analysis of degradation rates to demonstrate highly statistically significant effect of electron transport layer application method on degradation.
-            <br>
-            <a href="./doc/EQE_Summary_Slide.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--link)">Summary Slide</a>
-          </p>
-          <div class="tags">
-            <span class="tag">Physics</span>
-            <span class="tag">Python</span>
-            <span class="tag">Statistical Modeling</span>
-            <span class="tag">Data Analysis</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Pairs Trading With GMM-MinHash Regime Signaling</h3>
-          <p class="desc">
-            Original pairs trading strategy developed with advanced data science techniques. Apply Gaussian Mixture Models for regime signaling and MinHash for historical return predictions to provide combined trade signals on cointegrated equity pairs in the S&P 500.
-            <br>
-            <a href="https://github.com/spektordylan/pairs-trading-ml" target="_blank" rel="noopener noreferrer" style="color:var(--link)">GitHub Repo</a>  |  <a href="./doc/CSCI_4022_Project.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--link)">Report</a>
-          </p>
-          <div class="tags">
-              <span class="tag">Statistical Arbitrage</span>
-              <span class="tag">Data Science</span>
-              <span class="tag">Python</span>
-              <span class="tag">Random Forest</span>
-              <span class="tag">Backtesting</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Chemical Inventory Management System</h3>
-          <p class="desc">
+            <br/>
+<a href="./doc/EQE_Summary_Slide.pdf" rel="noopener noreferrer" style="color:var(--link)" target="_blank">Summary Slide</a>
+</p>
+<div class="tags">
+<span class="tag">Physics</span>
+<span class="tag">Python</span>
+<span class="tag">Statistical Modeling</span>
+<span class="tag">Data Analysis</span>
+</div>
+</div>
+    </div>
+  </details>
+  <details class="project-category">
+    <summary class="project-category-heading"><h3>Software Engineering</h3><span class="heading-rule"></span></summary>
+    <div class="projects-grid">
+<div class="project-card">
+<h3>Virtrade</h3>
+<p class="desc">
+                Paper trading web application with real-time market data integration. 
+                Users can buy/sell simulated positions to build trading intuition and climb the leaderboard. 
+                Built as a group project for CSCI 3308.
+              <br/>
+<a href="https://github.com/HarrisonKaufman/virtrade" rel="noopener noreferrer" style="color:var(--link)" target="_blank">GitHub Repo</a>
+</p>
+<div class="tags">
+<span class="tag">Rest APIs</span>
+<span class="tag">Node.js</span>
+<span class="tag">Express</span>
+<span class="tag">Flask</span>
+<span class="tag">PostgreSQL</span>
+<span class="tag">Docker</span>
+<span class="tag">Git</span>
+</div>
+</div>
+<div class="project-card">
+<h3>Chemical Inventory Management System</h3>
+<p class="desc">
             Desktop application intended for use by chemical laboratories to track, search, filter, and generate audits of their inventories. Includes UI customization settings, several concurrent windows, descriptive error handling, and file handling. Created from scratch using JavaFX framework and object-oriented Java principles.
-            <br>
-            <a href="https://github.com/spektordylan/Simple-Chemical-Inventory-Management-System" target="_blank" rel="noopener noreferrer" style="color:var(--link)">GitHub Repo</a>
-          </p>
-          <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Object-Oriented Programming</span>
-          </div>
-
-      </div>
-    </section>
+            <br/>
+<a href="https://github.com/spektordylan/Simple-Chemical-Inventory-Management-System" rel="noopener noreferrer" style="color:var(--link)" target="_blank">GitHub Repo</a>
+</p>
+<div class="tags">
+<span class="tag">Java</span>
+<span class="tag">Object-Oriented Programming</span>
+</div>
+</div>
+    </div>
+  </details>
+</section>
 
     <!-- ─── RESUME ─── -->
     <section id="resume">
@@ -606,7 +775,11 @@
         Best way to reach me is email: <a href="mailto:dylan.spektor@colorado.edu" style="color:var(--link)">dylan.spektor@colorado.edu</a>.<br>
         I'm also on <a href="https://github.com/spektordylan" target="_blank" style="color:var(--link)">GitHub</a> and <a href="https://www.linkedin.com/in/dylanspektor/" target="_blank" style="color:var(--link)">LinkedIn</a>.
       </p>
+      <p style="font-size: 0.75rem; color: var(--muted); margin-top: 1rem; line-height: 1.2;">
+        Background Image Credit: Marc Ngui
+      </p>
     </section>
   </div>
+
 </body>
 </html>
