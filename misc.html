@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miscellaneous | Dylan Spektor</title>
+  <style>
+
+    :root {
+      --bg: #f5f4ef;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #5E9D34;
+      --accent2: #2980b9;
+      --border: #ccc;
+      --nav-bg: #1a1a1a;
+      --nav-text: #f5f4ef;
+      --card-bg: #fff;
+      --link: #2980b9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17px; }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.6;
+      padding-left: 180px;
+    }
+    nav {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      width: 180px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      border-right: 3px solid var(--accent);
+    }
+    nav a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.1px;
+      transition: color 0.15s;
+    }
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav a:focus-visible, a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .page-header {
+      padding-bottom: 1.5rem;
+      margin-bottom: 2.25rem;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .page-header .subtitle {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      font-weight: normal;
+      letter-spacing: 0.03rem;
+      margin-bottom: 0.65rem;
+    }
+    .back-link {
+      color: var(--link);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      padding: 1rem 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 767px) {
+      body { padding-left: 0; }
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0.25rem 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 3px solid var(--accent);
+      }
+      nav a {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 0.5rem 0.65rem;
+        white-space: nowrap;
+      }
+      .container { padding: 2rem 1.25rem 3rem; }
+    }
+
+
+    .misc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 225px), 250px));
+      gap: 1.5rem;
+      justify-content: center;
+
+      min-height: calc(100vh - 290px);
+
+      background-image:
+      linear-gradient(
+        rgba(245, 244, 239, 0.7),
+        rgba(245, 244, 239, 0.7)
+      ),
+      url("./img/misc-bg.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+    }
+    .misc-card {
+      display: flex;
+      flex-direction: column;
+      aspect-ratio: 3 / 4;
+      min-height: 310px;
+      padding: 1.4rem;
+      color: var(--text);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent2);
+      text-decoration: none;
+      transition: border-left-color 0.18s, transform 0.18s;
+    }
+    .misc-card:hover, .misc-card:focus-visible {
+      border-left-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .card-kicker {
+      font-size: 0.77rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.3rem;
+    }
+    .misc-card h2 {
+      font-size: 1.55rem;
+      font-weight: normal;
+      line-height: 1.22;
+      margin-bottom: 1rem;
+      color: var(--link);
+    }
+    .misc-card p { font-size: 0.94rem; line-height: 1.6; color: var(--muted); }
+    .card-footer {
+      margin-top: auto;
+      padding-top: 1.25rem;
+      font-size: 0.92rem;
+      color: var(--link);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .misc-card { transition: none; }
+      .misc-card:hover { transform: none; }
+    }
+
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation">
+    <a href="./index.html">Home</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./index.html#projects">Projects</a>
+    <a href="./index.html#resume">Resume</a>
+    <a href="./index.html#contact">Contact</a>
+    <a href="./misc.html" class="active" aria-current="page">Misc</a>
+  </nav>
+  <main class="container">
+    <header class="page-header">
+      <h1>Miscellaneous</h1>
+      <p class="subtitle">Feel free to explore random things I felt should be here.
+        <br>
+        If you've cared enough to explore this page, maybe we'd get along :) <br> Feel free to reach out to me about anything (dylan.spektor@colorado.edu). 
+      </p>
+    </header>
+
+    <section class="misc-grid" aria-label="Miscellaneous collections">
+      <a class="misc-card" href="./misc/holy_grails.html">
+        <span class="card-kicker">Collection · 01</span>
+        <h2>Holy Grails</h2>
+        <p>A collection of intellectual achievements that resonate particularly well with me.</p>
+        <span class="card-footer">Explore collection &rarr;</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>Background image credit: <a href="https://www.inflexions.org/n1_t_nguihtml.html">Marc Ngui</a></footer>
+</body>
+</html>

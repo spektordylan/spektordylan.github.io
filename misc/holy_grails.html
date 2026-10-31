@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holy Grails | Dylan Spektor</title>
+  <style>
+
+    :root {
+      --bg: #f5f4ef;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #5E9D34;
+      --accent2: #2980b9;
+      --border: #ccc;
+      --nav-bg: #1a1a1a;
+      --nav-text: #f5f4ef;
+      --card-bg: #fff;
+      --link: #2980b9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17px; }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.6;
+      padding-left: 180px;
+    }
+    nav {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      width: 180px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      border-right: 3px solid var(--accent);
+    }
+    nav a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.1px;
+      transition: color 0.15s;
+    }
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav a:focus-visible, a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .page-header {
+      padding-bottom: 1.5rem;
+      margin-bottom: 2.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      font-weight: normal;
+      letter-spacing: 0.03rem;
+      margin-bottom: 0.65rem;
+    }
+    .page-header .subtitle {
+      color: var(--muted);
+      max-width: 700px;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+    .back-link {
+      color: var(--link);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      padding: 1rem 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 767px) {
+      body { padding-left: 0; }
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0.25rem 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 3px solid var(--accent);
+      }
+      nav a {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 0.5rem 0.65rem;
+        white-space: nowrap;
+      }
+      .container { padding: 2rem 1.25rem 3rem; }
+    }
+
+
+    .intro-note {
+      max-width: 770px;
+      border-left: 3px solid var(--accent);
+      padding: 0.15rem 0 0.15rem 1.1rem;
+      margin-bottom: 2.5rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+    .touchstone-list { list-style: none; }
+    .touchstone {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      column-gap: 0.8rem;
+      padding: 1.5rem 0 1.7rem;
+      border-top: 1px solid var(--border);
+    }
+    .touchstone-number {
+      color: var(--accent);
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      padding-top: 0.18rem;
+    }
+    .touchstone h2 {
+      font-size: 1.45rem;
+      font-weight: normal;
+      line-height: 1.3;
+      letter-spacing: 0.01rem;
+      margin-bottom: 1.3rem;
+    }
+    .notes-label {
+      font-size: 0.79rem;
+      color: var(--muted);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .notes-space {
+      min-height: 86px;
+    }
+    @media (max-width: 520px) {
+      .touchstone { grid-template-columns: 38px minmax(0, 1fr); column-gap: 0.6rem; }
+      .touchstone h2 { font-size: 1.3rem; }
+    }
+
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation">
+    <a href="../index.html">Home</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../misc.html" class="active">Misc</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#resume">Resume</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+  <main class="container">
+    <a class="back-link" href="../misc.html">&larr; Back to Miscellaneous</a>
+    <header class="page-header">
+      <h1>My Holy Grails</h1>
+      <p class="subtitle">A collection of intellectual achievements that resonate particularly well with me.</p>
+    </header>
+
+    <p class="intro-note">I list these to keep a log of my interests and to suggest a unifying pattern in the kinds of results I eventually want my own work to achieve.</p>
+
+    <ol class="touchstone-list">
+      <li class="touchstone">
+        <span class="touchstone-number" aria-hidden="true">01</span>
+        <div>
+          <h2>Gödel's incompleteness proofs</h2>
+          <div class="notes-label">Notes</div>
+          <div class="notes-space" aria-label="Space reserved for notes">
+            Shattering the illusion of perfect formalisms... what a lovely result
+          </div>
+        </div>
+      </li>
+      <li class="touchstone">
+        <span class="touchstone-number" aria-hidden="true">02</span>
+        <div>
+          <h2>The Curry–Howard correspondence</h2>
+          <div class="notes-label">Notes</div>
+          <div class="notes-space" aria-label="Space reserved for notes">
+            I was introduced to this upon starting PL research, and it was extremely satisfying to me. I guess I love when formal objects like "programs" and "proofs" 
+            (which are already a lot to thing about: complex, fundamental, and offering infinite unthought future instances)
+            elegantly collapse in on each other by equivalence, thereby making the world a little simpler and more amenable to analysis. 
+          </div>
+        </div>
+      </li>
+      <li class="touchstone">
+        <span class="touchstone-number" aria-hidden="true">03</span>
+        <div>
+          <h2>Lacanian psychoanalysis</h2>
+          <div class="notes-label">Notes</div>
+          <div class="notes-space" aria-label="Space reserved for notes">
+            The whole framework. Listening to lectures on Lacanian psychoanalysis is in itself a form of therapy for me. 
+            To put it in a way I may not be licensed to yet (one day), the field is full of so many delicious inversions that it seems to yield insights every time I engage with it (or maybe I just never learn the first time).
+          </div>
+        </div>
+      </li>
+    </ol>
+  </main>
+</body>
+</html>

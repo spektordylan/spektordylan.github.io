@@ -19,26 +19,16 @@
       --link: #2980b9;
       --base-size: 18px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-size: 17px;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17px; }
     body {
       font-family: "Times New Roman", Times, serif;
       background: var(--bg);
       color: var(--text);
       font-size: var(--base-size);
       line-height: 1.6;
-      display: block;
+      padding-left: 180px;
     }
-
     nav {
       background: var(--nav-bg);
       color: var(--nav-text);
@@ -51,9 +41,9 @@
       position: fixed;
       top: 0;
       left: 0;
+      z-index: 10;
       border-right: 3px solid var(--accent);
     }
-
     nav a {
       display: block;
       width: 100%;
@@ -64,39 +54,26 @@
       letter-spacing: 0.1px;
       transition: color 0.15s;
     }
-
-    nav a:hover, nav a.active {
-      color: var(--accent);
-    }
-
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav a:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     .container {
       max-width: 1080px;
-      width: min(1080px, calc(100vw - 260px));
+      width: 100%;
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
     }
-
     .page-header {
       border-bottom: 1px solid var(--border);
       margin-bottom: 2rem;
       padding-bottom: 1rem;
     }
-
     .page-header h1 {
       font-size: 2.2rem;
       font-weight: normal;
       margin-bottom: 0.5rem;
     }
-
-    .page-header p {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-    }
-
+    .page-header p { color: var(--muted); font-size: 1rem; }
+    section { margin-bottom: 2.5rem; }
     h2 {
       font-size: 1.5rem;
       font-weight: normal;
@@ -106,71 +83,22 @@
       border-bottom: 2px solid var(--text);
       display: inline-block;
     }
-
-    .feed {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
+    .feed { display: flex; flex-direction: column; gap: 1rem; }
     .post {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-left: 4px solid var(--accent2);
       padding: 1.1rem 1.25rem;
     }
-
-    .post-meta {
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .post h3 {
-      font-size: 1.45rem;
-      font-weight: normal;
-      margin-bottom: 0.55rem;
-    }
-
-    .post h3 a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .post h3 a:hover {
-      text-decoration: underline;
-    }
-
-    .post p {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .template-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 1.25rem;
-    }
-
-    .template-box .meta {
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .template-box h3 {
-      font-size: 1.4rem;
-      font-weight: normal;
-      margin-bottom: 0.5rem;
-    }
-
-    .template-box .byline {
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-    }
-
+    .post-meta { color: var(--muted); font-size: 0.8rem; margin-bottom: 0.5rem; }
+    .post h3 { font-size: 1.45rem; font-weight: normal; margin-bottom: 0.55rem; }
+    .post h3 a { color: var(--text); text-decoration: none; }
+    .post h3 a:hover { text-decoration: underline; }
+    .post p { color: var(--muted); font-size: 1rem; line-height: 1.7; }
+    .template-box { background: var(--card-bg); border: 1px solid var(--border); padding: 1.25rem; }
+    .template-box .meta { color: var(--muted); font-size: 0.8rem; margin-bottom: 0.5rem; }
+    .template-box h3 { font-size: 1.4rem; font-weight: normal; margin-bottom: 0.5rem; }
+    .template-box .byline { color: var(--muted); font-size: 0.8rem; margin-bottom: 1rem; }
     .template-box h4 {
       font-size: 1rem;
       font-weight: normal;
@@ -178,19 +106,8 @@
       text-transform: uppercase;
       letter-spacing: 0.05rem;
     }
-
-    .template-box p,
-    .template-box li {
-      color: var(--text);
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-
-    .template-box ul,
-    .template-box ol {
-      margin: 0.75rem 0 0.75rem 1.5rem;
-    }
-
+    .template-box p, .template-box li { color: var(--text); font-size: 0.95rem; line-height: 1.8; }
+    .template-box ul, .template-box ol { margin: 0.75rem 0 0.75rem 1.5rem; }
     .template-box .code-like {
       display: block;
       background: #f1f1eb;
@@ -201,46 +118,53 @@
       color: var(--text);
       font-size: 0.8rem;
     }
-
-    @media (max-width: 1400px) {
+    @media (max-width: 767px) {
+      body { padding-left: 0; }
       nav {
-        display: none;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0.25rem 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 3px solid var(--accent);
       }
-
-      .container {
-        width: min(900px, calc(100vw - 3rem));
-        margin: 0 auto;
+      nav a {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 0.5rem 0.65rem;
+        white-space: nowrap;
       }
+      .container { padding: 2rem 1.25rem; }
     }
   </style>
 </head>
 <body>
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="./index.html">Home</a>
-    <a href="./blog.html" class="active">Blog</a>
+    <a href="./blog.html" class="active" aria-current="page">Blog</a>
     <a href="./index.html#projects">Projects</a>
     <a href="./index.html#resume">Resume</a>
     <a href="./index.html#contact">Contact</a>
+    <a href="./misc.html">Misc</a>
   </nav>
-
-  <div class="container">
+  <main class="container">
     <header class="page-header">
       <h1>Blog</h1>
       <p>Frantic writings exploring ideas relating to my research with varying technicality.</p>
     </header>
-
     <section>
       <h2>Posts</h2>
       <div class="feed">
         <article class="post">
           <div class="post-meta">September 17, 2026</div>
           <h3><a href="./post.html">Dialectically Thinking Through Alignment</a></h3>
-          <p>
-            Hegel, Zizek, and Alignment.
-          </p>
+          <p>Hegel, Zizek, and Alignment.</p>
         </article>
       </div>
     </section>
-  </div>
+  </main>
 </body>
 </html>
