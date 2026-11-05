@@ -32,6 +32,7 @@
       font-size: var(--base-size);
       line-height: 1.6;
       display: block;
+      padding-left: 180px;
     }
 
     nav {
@@ -46,6 +47,7 @@
       position: fixed;
       top: 0;
       left: 0;
+      z-index: 10;
       border-right: 3px solid var(--accent);
     }
 
@@ -60,112 +62,100 @@
       transition: color 0.15s;
     }
 
-    nav a:hover, nav a.active {
-      color: var(--accent);
-    }
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav a:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     .container {
-      max-width: 900px;
-      width: min(900px, calc(100vw - 260px));
+      max-width: 1080px;
+      width: 100%;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
+      padding: 2.5rem 1.5rem;
     }
 
     .back-link {
-      display: inline-block;
-      margin-bottom: 1.5rem;
       color: var(--link);
       text-decoration: none;
-      font-size: 1rem;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    .article {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent2);
-      padding: 1.5rem 1.5rem 2rem;
-    }
-
-    .meta {
-      color: var(--muted);
       font-size: 0.9rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .article h1 {
-      font-size: 2.2rem;
-      font-weight: normal;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-
-    .byline {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .article h2 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      letter-spacing: 0.04rem;
-      margin: 1.5rem 0 0.5rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 2px solid var(--text);
       display: inline-block;
-    }
-
-    .article p,
-    .article li {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--text);
-    }
-
-    .article p {
       margin-bottom: 1rem;
     }
 
-    .article ul,
-    .article ol {
-      margin: 0.75rem 0 1rem 1.5rem;
+    .back-link:hover { text-decoration: underline; }
+
+    .article {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .article blockquote {
-      border-left: 4px solid var(--accent);
-      padding-left: 1rem;
-      margin: 1.25rem 0;
+    .meta, .byline {
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
     }
 
-    @media (max-width: 1400px) {
-      nav {
-        display: none;
-      }
+    .article h1 {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      font-weight: normal;
+      margin-bottom: 0.8rem;
+    }
 
-      .container {
-        width: min(900px, calc(100vw - 3rem));
-        margin: 0 auto;
+    .article h2 {
+      font-size: 1.6rem;
+      margin: 2rem 0 1rem;
+      font-weight: normal;
+    }
+
+    .article p {
+      margin: 1rem 0;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .article em { font-style: italic; }
+
+    .article a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .article a:hover { text-decoration: underline; }
+
+    @media (max-width: 767px) {
+      body { padding-left: 0; }
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0.25rem 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        border-right: 0;
+        border-bottom: 3px solid var(--accent);
       }
+      nav a {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 0.5rem 0.65rem;
+        white-space: nowrap;
+      }
+      .container { width: 100%; padding: 2rem 1.25rem; }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="./index.html">Home</a>
-    <a href="./blog.html" class="active">Blog</a>
-    <a href="./index.html#projects">Projects</a>
-    <a href="./index.html#resume">Resume</a>
-    <a href="./index.html#contact">Contact</a>
+    <a href="../index.html">Home</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#resume">Resume</a>
+    <a href="../index.html#contact">Contact</a>
+    <a href="../misc.html">Misc</a>
   </nav>
 
   <div class="container">
-    <a class="back-link" href="./blog.html">← Back to blog</a>
+    <a class="back-link" href="../blog.html">← Back to blog</a>
 
     <article class="article">
       <div class="meta">September 17, 2026</div>

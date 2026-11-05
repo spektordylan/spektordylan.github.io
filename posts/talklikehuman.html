@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dialectical Musings on AI Alignment</title>
+  <style>
+    :root {
+      --bg: #f5f4ef;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #5E9D34;
+      --accent2: #2980b9;
+      --border: #ccc;
+      --nav-bg: #1a1a1a;
+      --nav-text: #f5f4ef;
+      --card-bg: #ffffff;
+      --link: #2980b9;
+      --base-size: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: var(--base-size);
+      line-height: 1.6;
+      display: block;
+      padding-left: 180px;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      width: 180px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      border-right: 3px solid var(--accent);
+    }
+
+    nav a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.1px;
+      transition: color 0.15s;
+    }
+
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav a:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    .container {
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .back-link {
+      color: var(--link);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    .article {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .meta, .byline {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .article h1 {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      font-weight: normal;
+      margin-bottom: 0.8rem;
+    }
+
+    .article h2 {
+      font-size: 1.6rem;
+      margin: 2rem 0 1rem;
+      font-weight: normal;
+    }
+
+    .article p {
+      margin: 1rem 0;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .article em { font-style: italic; }
+
+    .article a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .article a:hover { text-decoration: underline; }
+
+    @media (max-width: 767px) {
+      body { padding-left: 0; }
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0.25rem 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        border-right: 0;
+        border-bottom: 3px solid var(--accent);
+      }
+      nav a {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 0.5rem 0.65rem;
+        white-space: nowrap;
+      }
+      .container { width: 100%; padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#resume">Resume</a>
+    <a href="../index.html#contact">Contact</a>
+    <a href="../misc.html">Misc</a>
+  </nav>
+
+  <div class="container">
+    <a class="back-link" href="../blog.html">← Back to blog</a>
+
+    <article class="article">
+      <div class="meta">November 5, 2026</div>
+      <h1>Why You Should Talk to AI Like a Human</h1>
+      <div class="byline">By Dylan Spektor</div>
+
+      <p>This blog post argues that it is okay and actually good to talk to your AI agent like it is a human being. It is going to be very short and probably could be a tweet, but I don't like seeing the little heart with a zero next to it and would much rather put my thoughts on a static HTML file on the World Wide Web, to be buried amongst millions of others...</p>
+
+    <h2>Power over the Frame</h2>
+
+    <p>Having only started dictating prompts to my AIs in the past month (I learned of Abraham Lincoln's assassination recently too and that was difficult news for me), I have become more aware of how it may look to others when you open your mouth and use the holy gift of language to give commands to a computer.</p>
+
+    <p>When we communicate with computers in such a way, we often speak naturally, as if speaking to a friend. The average person's surface-level reaction to this is one of </p>
+
+  </article>
+  </div>
+</body>
+</html>
